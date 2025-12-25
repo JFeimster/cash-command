@@ -40,9 +40,9 @@ const Header = () => {
         <div className="flex items-center justify-between h-20">
           
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
+          <Link href="/" className="flex items-center gap-2 group text-white hover:text-white">
             <Drop size={32} weight="fill" className="text-whiskey group-hover:animate-pulse" />
-            <span className="font-serif text-2xl font-bold text-white tracking-tight">
+            <span className="font-serif text-2xl font-bold tracking-tight">
               Moonshine<span className="text-whiskey">Capital</span>
             </span>
           </Link>

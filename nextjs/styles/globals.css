@@ -8,22 +8,40 @@ body {
     color: #F3F4F6; /* Gray 100 */
 }
 
-/* Force Update Comment: v2 */
+/* Force Update Comment: v3 - Fix Invisible Buttons */
 
-/* Fix for invisible links/buttons */
+/* 1. Ensure all links/buttons inherit color by default to avoid User Agent blue */
 a, button {
-    color: inherit; 
+    color: inherit;
 }
 
-/* NUCLEAR OPTION: Force dark text on Gold buttons */
-.bg-whiskey, 
-.bg-whiskey:hover, 
-a.bg-whiskey {
-    color: #0B0F19 !important; /* Deep Navy Text */
+/* 2. Primary Button Style - The "Nuclear Option" */
+/* Targeted by class name used in components */
+.bg-whiskey,
+a.bg-whiskey,
+button.bg-whiskey {
+    background-color: #D4AF37 !important; /* Force Gold Background */
+    color: #0B0F19 !important;            /* Force Navy Text */
+    opacity: 1 !important;                /* Ensure visibility */
 }
 
-.text-midnight-900 {
-    color: #0B0F19 !important;
+/* 3. Hover State for Primary Button */
+.bg-whiskey:hover,
+a.bg-whiskey:hover,
+button.bg-whiskey:hover {
+    background-color: #ffffff !important; /* White on hover */
+    color: #0B0F19 !important;            /* Navy Text */
+}
+
+/* 4. Secondary/Outline Button Style */
+/* Often used for "How it Works" */
+.border-white\/20 {
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    color: #ffffff !important;
+}
+
+.border-white\/20:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
 }
 
 /* Custom Scrollbar */

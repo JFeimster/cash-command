@@ -45,8 +45,7 @@ export default function Home() {
 
       {/* Ticker Section */}
       <div className="border-y border-white/5 bg-midnight-800/50 backdrop-blur-sm overflow-hidden py-4">
-        <div className="flex gap-8 whitespace-nowrap animate-marquee">
-           {/* In a real implementation, you'd use a CSS module for the marquee keyframes, or a Tailwind plugin */}
+        <div className="flex gap-8 whitespace-nowrap animate-ticker">
            {[...Array(2)].map((_, i) => (
              <div key={i} className="flex gap-12">
                <span className="text-gray-500 font-bold uppercase tracking-wider text-sm">Revenue Based Financing</span>
@@ -108,7 +107,7 @@ export default function Home() {
           </div>
 
           <div className="mt-16">
-            <Link href="/directory" className="bg-whiskey text-midnight-900 px-8 py-3 rounded-lg font-bold hover:bg-white transition-colors">
+            <Link href="/directory" className="bg-whiskey text-midnight-900 px-8 py-3 rounded-lg font-bold hover:bg-white transition-colors inline-block">
               Start the Shortlist
             </Link>
           </div>
@@ -126,7 +125,7 @@ export default function Home() {
             <span className="hidden md:inline">•</span>
             <span className="flex items-center gap-1"><CheckCircle weight="fill" className="text-whiskey" /> Direct Apply Paths</span>
           </div>
-          <Link href="/directory" className="bg-whiskey text-midnight-900 px-10 py-4 rounded-lg font-bold text-lg hover:bg-white transition-all shadow-lg">
+          <Link href="/directory" className="bg-whiskey text-midnight-900 px-10 py-4 rounded-lg font-bold text-lg hover:bg-white transition-all shadow-lg inline-block">
             Find My Best Options
           </Link>
         </div>
