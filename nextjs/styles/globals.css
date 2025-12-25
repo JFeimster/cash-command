@@ -8,14 +8,18 @@ body {
     color: #F3F4F6; /* Gray 100 */
 }
 
+/* Force Update Comment: v2 */
+
 /* Fix for invisible links/buttons */
 a, button {
-    color: inherit; /* Default to parent color unless overridden */
+    color: inherit; 
 }
 
-/* Explicit Button Overrides to prevent "Invisible" state */
-.bg-whiskey {
-    color: #0B0F19 !important; /* Force dark text on Gold buttons */
+/* NUCLEAR OPTION: Force dark text on Gold buttons */
+.bg-whiskey, 
+.bg-whiskey:hover, 
+a.bg-whiskey {
+    color: #0B0F19 !important; /* Deep Navy Text */
 }
 
 .text-midnight-900 {
