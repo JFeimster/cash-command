@@ -2,6 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Base Styles */
+body {
+    background-color: #0B0F19; /* Midnight 900 */
+    color: #F3F4F6; /* Gray 100 */
+}
+
+/* Fix for invisible links/buttons */
+a, button {
+    color: inherit; /* Default to parent color unless overridden */
+}
+
+/* Explicit Button Overrides to prevent "Invisible" state */
+.bg-whiskey {
+    color: #0B0F19 !important; /* Force dark text on Gold buttons */
+}
+
+.text-midnight-900 {
+    color: #0B0F19 !important;
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
     width: 8px;
@@ -15,10 +35,4 @@
 }
 ::-webkit-scrollbar-thumb:hover {
     background: #D4AF37; 
-}
-
-/* Base Styles */
-body {
-    background-color: #0B0F19; /* Midnight 900 */
-    color: #F3F4F6; /* Gray 100 */
 }
