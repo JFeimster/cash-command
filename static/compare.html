@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Compare | Moonshine Capital</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: { extend: { colors: { midnight: '#0B0F19', 'midnight-light': '#151B2B', whiskey: '#D4AF37' }, fontFamily: { sans: ['Inter'], serif: ['Playfair Display'] } } }
+        }
+    </script>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        .compare-row { display: flex; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .compare-head { width: 200px; padding: 1.5rem; color: #9CA3AF; font-size: 0.875rem; background: rgba(255,255,255,0.02); flex-shrink: 0; }
+        .compare-cell { flex: 1; padding: 1.5rem; text-align: center; color: white; display: flex; align-items: center; justify-content: center; }
+        .compare-cell:not(:last-child) { border-right: 1px solid rgba(255,255,255,0.05); }
+    </style>
+</head>
+<body class="bg-midnight text-gray-200 font-sans antialiased">
+
+    <nav class="border-b border-white/10 bg-midnight">
+        <div class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
+            <a href="index.html" class="font-serif text-2xl font-bold text-white">Moonshine<span class="text-whiskey">Capital</span></a>
+            <a href="index.html" class="text-sm text-gray-400 hover:text-white">← Back Home</a>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-4 py-12">
+        <h1 class="text-4xl font-serif font-bold text-white mb-8 text-center">Compare Providers</h1>
+        
+        <!-- Selection Bar -->
+        <div class="flex justify-center gap-4 mb-12">
+            <button class="bg-midnight-light border border-dashed border-white/20 text-gray-500 w-48 h-16 rounded-lg flex items-center justify-center hover:border-whiskey hover:text-whiskey transition-colors">
+                <i class="ph-bold ph-plus mr-2"></i> Add Provider
+            </button>
+            <button class="bg-midnight-light border border-dashed border-white/20 text-gray-500 w-48 h-16 rounded-lg flex items-center justify-center hover:border-whiskey hover:text-whiskey transition-colors">
+                <i class="ph-bold ph-plus mr-2"></i> Add Provider
+            </button>
+            <button class="bg-midnight-light border border-dashed border-white/20 text-gray-500 w-48 h-16 rounded-lg flex items-center justify-center hover:border-whiskey hover:text-whiskey transition-colors">
+                <i class="ph-bold ph-plus mr-2"></i> Add Provider
+            </button>
+        </div>
+
+        <!-- Table Container -->
+        <div class="bg-midnight-light border border-white/10 rounded-xl overflow-hidden overflow-x-auto shadow-2xl">
+            <!-- Header -->
+            <div class="compare-row bg-white/5">
+                <div class="compare-head font-bold text-white">Feature</div>
+                <div class="compare-cell text-whiskey font-bold">QuickCapital</div>
+                <div class="compare-cell text-whiskey font-bold">BizGrow SBA</div>
+                <div class="compare-cell text-gray-600 italic">Empty Slot</div>
+            </div>
+            
+            <!-- Rows -->
+            <div class="compare-row">
+                <div class="compare-head">Speed</div>
+                <div class="compare-cell">24 Hours</div>
+                <div class="compare-cell">45 Days</div>
+                <div class="compare-cell">-</div>
+            </div>
+            <div class="compare-row">
+                <div class="compare-head">Min Credit</div>
+                <div class="compare-cell">500</div>
+                <div class="compare-cell">680</div>
+                <div class="compare-cell">-</div>
+            </div>
+            <div class="compare-row">
+                <div class="compare-head">Max Amount</div>
+                <div class="compare-cell">$50,000</div>
+                <div class="compare-cell">$5,000,000</div>
+                <div class="compare-cell">-</div>
+            </div>
+             <div class="compare-row">
+                <div class="compare-head">Best For</div>
+                <div class="compare-cell text-sm text-gray-400">Gig Workers</div>
+                <div class="compare-cell text-sm text-gray-400">Real Estate</div>
+                <div class="compare-cell">-</div>
+            </div>
+             <div class="compare-row">
+                <div class="compare-head">Action</div>
+                <div class="compare-cell"><a href="#" class="btn btn-primary text-xs px-4 py-2">Apply</a></div>
+                <div class="compare-cell"><a href="#" class="btn btn-primary text-xs px-4 py-2">Apply</a></div>
+                <div class="compare-cell">-</div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

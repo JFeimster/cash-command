@@ -1,0 +1,38 @@
+{
+  "MCA": {
+    "label": "Merchant Cash Advance",
+    "short_label": "Cash Advance",
+    "description": "Lump sum cash in exchange for a percentage of future daily sales.",
+    "icon": "ph-lightning"
+  },
+  "TERM": {
+    "label": "Term Loan",
+    "short_label": "Term Loan",
+    "description": "Traditional lump sum loan repaid over a fixed period with interest.",
+    "icon": "ph-bank"
+  },
+  "RBF": {
+    "label": "Revenue Based Financing",
+    "short_label": "Revenue Share",
+    "description": "Capital in exchange for a percentage of monthly revenue until a cap is reached.",
+    "icon": "ph-chart-line-up"
+  },
+  "LOC": {
+    "label": "Line of Credit",
+    "short_label": "Line of Credit",
+    "description": "Revolving credit limit you can draw from as needed.",
+    "icon": "ph-credit-card"
+  },
+  "EQUIP": {
+    "label": "Equipment Financing",
+    "short_label": "Equipment",
+    "description": "Loans specifically for purchasing business machinery or vehicles.",
+    "icon": "ph-truck"
+  },
+  "INV": {
+    "label": "Invoice Factoring",
+    "short_label": "Factoring",
+    "description": "Selling unpaid invoices to a third party at a discount for immediate cash.",
+    "icon": "ph-file-text"
+  }
+}

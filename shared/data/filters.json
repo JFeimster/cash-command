@@ -1,0 +1,30 @@
+{
+  "revenue": [
+    { "label": "No Minimum", "value": 0 },
+    { "label": "$5k / mo", "value": 5000 },
+    { "label": "$15k / mo", "value": 15000 },
+    { "label": "$50k / mo", "value": 50000 },
+    { "label": "$100k+ / mo", "value": 100000 }
+  ],
+  "credit": [
+    { "label": "Any Credit", "value": 0 },
+    { "label": "500+ (Poor)", "value": 500 },
+    { "label": "600+ (Fair)", "value": 600 },
+    { "label": "680+ (Good)", "value": 680 },
+    { "label": "720+ (Excellent)", "value": 720 }
+  ],
+  "speed": [
+    { "label": "Any Speed", "value": "all" },
+    { "label": "Same Day / Instant", "value": "fast" },
+    { "label": "Within 1 Week", "value": "standard" },
+    { "label": "1 Month+", "value": "slow" }
+  ],
+  "use_cases": [
+    { "label": "Payroll", "value": "payroll" },
+    { "label": "Inventory", "value": "inventory" },
+    { "label": "Marketing / Ads", "value": "marketing" },
+    { "label": "Equipment Purchase", "value": "equipment" },
+    { "label": "Real Estate", "value": "real_estate" },
+    { "label": "Acquisition", "value": "acquisition" }
+  ]
+}

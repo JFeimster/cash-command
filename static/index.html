@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moonshine Capital | Next Gen Funding</title>
+    <meta name="description" content="Compare funding options that fit your business. Browse vetted providers, filter by speed and requirements.">
+    
+    <!-- Tailwind & Custom CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        midnight: '#0B0F19',
+                        'midnight-light': '#151B2B',
+                        whiskey: '#D4AF37',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body class="bg-midnight text-gray-200 font-sans antialiased">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 transition-all duration-300 border-b border-white/5 bg-midnight/90 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="index.html" class="flex items-center gap-2 group">
+                    <i class="ph-fill ph-drop text-whiskey text-3xl group-hover:animate-pulse"></i>
+                    <span class="font-serif text-2xl font-bold text-white tracking-tight">Moonshine<span class="text-whiskey">Capital</span></span>
+                </a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="directory.html" class="hover:text-whiskey transition-colors font-medium">Directory</a>
+                    <a href="compare.html" class="hover:text-whiskey transition-colors font-medium">Compare</a>
+                    <a href="about.html" class="hover:text-whiskey transition-colors font-medium">About</a>
+                    <a href="directory.html" class="btn btn-primary">Get Funded</a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-gray-400 hover:text-white">
+                    <i class="ph ph-list text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-midnight-light border-b border-white/10 p-4 space-y-4">
+            <a href="directory.html" class="block hover:text-whiskey font-medium">Directory</a>
+            <a href="compare.html" class="block hover:text-whiskey font-medium">Compare</a>
+            <a href="about.html" class="block hover:text-whiskey font-medium">About</a>
+            <a href="directory.html" class="block text-whiskey font-bold">Get Funded</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden text-center px-4">
+        <!-- Background Glow -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full z-0 pointer-events-none">
+            <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-whiskey/5 rounded-full blur-[100px]"></div>
+        </div>
+
+        <div class="relative z-10 max-w-4xl mx-auto">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 mb-8 animate-fade-up">
+                <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                <span class="text-xs font-bold tracking-wide text-gray-400 uppercase">Updated Daily</span>
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl font-serif font-bold text-white mb-6 leading-tight tracking-tight animate-fade-up delay-100">
+                Compare funding options that <span class="text-whiskey">fit your business.</span>
+            </h1>
+            
+            <p class="mt-4 text-xl text-gray-400 mb-10 max-w-2xl mx-auto animate-fade-up delay-200">
+                Browse vetted providers. Filter by speed, requirements, and use case. A simple directory for founders who need capital and clarity.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-4 animate-fade-up delay-300">
+                <a href="directory.html" class="btn btn-primary text-lg px-8 py-4">
+                    Find My Best Options
+                </a>
+                <a href="#how-it-works" class="btn btn-outline text-lg px-8 py-4">
+                    How it Works
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Ticker -->
+    <div class="ticker-wrap">
+        <div class="ticker">
+            <span class="ticker-item">Revenue Based Financing</span>
+            <span class="ticker-item">Instant Gig Funding</span>
+            <span class="ticker-item">SBA 7(a) Loans</span>
+            <span class="ticker-item">Equipment Leasing</span>
+            <span class="ticker-item">Invoice Factoring</span>
+            <span class="ticker-item">Business Lines of Credit</span>
+            <!-- Duplicate for loop -->
+            <span class="ticker-item">Revenue Based Financing</span>
+            <span class="ticker-item">Instant Gig Funding</span>
+            <span class="ticker-item">SBA 7(a) Loans</span>
+            <span class="ticker-item">Equipment Leasing</span>
+            <span class="ticker-item">Invoice Factoring</span>
+            <span class="ticker-item">Business Lines of Credit</span>
+        </div>
+    </div>
+
+    <!-- Who it's for -->
+    <section class="py-20 bg-midnight-light border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-serif font-bold text-white">Built for time-poor operators.</h2>
+                <p class="text-gray-400 mt-2">If banks said no, or cash flow is tight, start here.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Card 1 -->
+                <div class="p-6 bg-midnight rounded-xl border border-white/5 hover:border-whiskey/50 transition-colors">
+                    <i class="ph-duotone ph-storefront text-4xl text-whiskey mb-4"></i>
+                    <h3 class="font-bold text-white mb-2">SMBs</h3>
+                    <p class="text-sm text-gray-400">Owners with inconsistent cash flow needing stability.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="p-6 bg-midnight rounded-xl border border-white/5 hover:border-whiskey/50 transition-colors">
+                    <i class="ph-duotone ph-shopping-cart text-4xl text-whiskey mb-4"></i>
+                    <h3 class="font-bold text-white mb-2">Ecom & Agencies</h3>
+                    <p class="text-sm text-gray-400">Working capital for ads & inventory scaling.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="p-6 bg-midnight rounded-xl border border-white/5 hover:border-whiskey/50 transition-colors">
+                    <i class="ph-duotone ph-handshake text-4xl text-whiskey mb-4"></i>
+                    <h3 class="font-bold text-white mb-2">Acquisition</h3>
+                    <p class="text-sm text-gray-400">Operators managing business buyouts & growth.</p>
+                </div>
+                <!-- Card 4 -->
+                <div class="p-6 bg-midnight rounded-xl border border-white/5 hover:border-whiskey/50 transition-colors">
+                    <i class="ph-duotone ph-rocket text-4xl text-whiskey mb-4"></i>
+                    <h3 class="font-bold text-white mb-2">Founders</h3>
+                    <p class="text-sm text-gray-400">Optimizing finance ops tooling and capital stacks.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-serif font-bold text-white mb-12">3 steps to shortlist.</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+                <!-- Connector Line -->
+                <div class="hidden md:block absolute top-12 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-whiskey/20 to-transparent -z-10"></div>
+                
+                <!-- Step 1 -->
+                <div class="bg-midnight-light p-8 rounded-2xl border border-white/5 relative">
+                    <div class="w-12 h-12 bg-midnight border-2 border-whiskey text-whiskey rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-6 shadow-[0_0_15px_rgba(212,175,55,0.2)]">1</div>
+                    <h3 class="font-bold text-white text-lg mb-2">Filter</h3>
+                    <p class="text-sm text-gray-400">Identify your funding goal (Growth, Payroll, Inventory).</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="bg-midnight-light p-8 rounded-2xl border border-white/5 relative">
+                    <div class="w-12 h-12 bg-midnight border-2 border-whiskey text-whiskey rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-6 shadow-[0_0_15px_rgba(212,175,55,0.2)]">2</div>
+                    <h3 class="font-bold text-white text-lg mb-2">Compare</h3>
+                    <p class="text-sm text-gray-400">Sort providers by revenue reqs, credit score, and speed.</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="bg-midnight-light p-8 rounded-2xl border border-white/5 relative">
+                    <div class="w-12 h-12 bg-midnight border-2 border-whiskey text-whiskey rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-6 shadow-[0_0_15px_rgba(212,175,55,0.2)]">3</div>
+                    <h3 class="font-bold text-white text-lg mb-2">Apply</h3>
+                    <p class="text-sm text-gray-400">Go directly to the provider that fits your profile best.</p>
+                </div>
+            </div>
+            <div class="mt-12">
+                <a href="directory.html" class="btn btn-primary">Start the Shortlist</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:text-left">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div class="col-span-1 md:col-span-1">
+                    <span class="font-serif text-2xl font-bold tracking-tight text-white">Moonshine<span class="text-whiskey">Capital</span></span>
+                    <p class="text-gray-500 text-xs mt-4">Distilled funding for the modern economy.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Directory</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="directory.html" class="hover:text-whiskey">Revenue Based</a></li>
+                        <li><a href="directory.html" class="hover:text-whiskey">SBA Loans</a></li>
+                        <li><a href="directory.html" class="hover:text-whiskey">Equipment</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Company</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="about.html" class="hover:text-whiskey">About</a></li>
+                        <li><a href="contact.html" class="hover:text-whiskey">Contact</a></li>
+                        <li><a href="#" class="hover:text-whiskey">Privacy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Disclaimer</h4>
+                    <p class="text-gray-500 text-xs leading-relaxed">
+                        Moonshine Capital is a directory, not a lender. We may receive compensation from partners listed here.
+                    </p>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-600 text-xs">&copy; 2025 Moonshine Capital. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

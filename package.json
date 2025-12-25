@@ -1,0 +1,22 @@
+{
+  "name": "moonshine-capital-monorepo",
+  "version": "1.0.0",
+  "description": "Hybrid Static & Next.js Fintech Directory",
+  "private": true,
+  "scripts": {
+    "install:all": "npm install && cd nextjs && npm install",
+    "dev:next": "cd nextjs && npm run dev",
+    "build:next": "npm run sync:data && cd nextjs && npm run build",
+    "serve:static": "npx http-server static -o",
+    "sync:data": "node scripts/sync-data.js",
+    "test": "npm run test:static && npm run test:next",
+    "test:static": "echo 'Running Static Tests...'",
+    "test:next": "cd nextjs && npm run test"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "fs-extra": "^11.2.0"
+  },
+  "author": "Moonshine Capital Tech",
+  "license": "UNLICENSED"
+}
