@@ -10,6 +10,10 @@ import {
 export default function ProviderDetail({ provider }) {
   if (!provider) return null;
 
+  // Safe formatting helpers
+  const formatMoney = (val) => val ? `$${val.toLocaleString()}` : 'N/A';
+  const formatNumber = (val) => val ? val : 'N/A';
+
   return (
     <Layout 
       title={`${provider.name} Review & Details`} 
@@ -45,15 +49,15 @@ export default function ProviderDetail({ provider }) {
               <div className="flex flex-wrap gap-6 text-sm">
                 <div className="flex items-center gap-2 text-white bg-midnight-900/50 px-3 py-1.5 rounded-lg border border-white/5">
                   <Clock size={18} className="text-whiskey" weight="fill" />
-                  <span>{provider.speed_display} Funding</span>
+                  <span>{provider.speed_display || 'Varies'} Funding</span>
                 </div>
                 <div className="flex items-center gap-2 text-white bg-midnight-900/50 px-3 py-1.5 rounded-lg border border-white/5">
                   <ChartBar size={18} className="text-whiskey" weight="fill" />
-                  <span>${provider.min_revenue.toLocaleString()}/mo Rev</span>
+                  <span>{formatMoney(provider.min_revenue)}/mo Rev</span>
                 </div>
                 <div className="flex items-center gap-2 text-white bg-midnight-900/50 px-3 py-1.5 rounded-lg border border-white/5">
                   <CreditCard size={18} className="text-whiskey" weight="fill" />
-                  <span>{provider.min_credit}+ Credit</span>
+                  <span>{formatNumber(provider.min_credit)}+ Credit</span>
                 </div>
               </div>
             </div>
@@ -61,10 +65,10 @@ export default function ProviderDetail({ provider }) {
             {/* CTA Box */}
             <div className="shrink-0 w-full md:w-auto flex flex-col gap-3">
               <a 
-                href={provider.apply_link} 
+                href={provider.apply_link || '#'} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="btn-primary w-full md:w-auto text-center px-8 py-4 rounded-lg font-bold flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(212,175,55,0.2)]"
+                className="btn-primary w-full md:w-auto text-center px-8 py-4 rounded-lg font-bold flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(212,175,55,0.2)] bg-whiskey text-midnight-900 hover:bg-white transition-colors"
               >
                 Visit Website <ArrowUpRight weight="bold" />
               </a>
@@ -89,12 +93,12 @@ export default function ProviderDetail({ provider }) {
                 <CheckCircle size={24} weight="fill" /> The Good
               </h3>
               <ul className="space-y-3">
-                {provider.pros?.map((pro, i) => (
+                {provider.pros && provider.pros.length > 0 ? provider.pros.map((pro, i) => (
                   <li key={i} className="flex gap-3 text-sm text-gray-300">
                     <span className="mt-1 w-1.5 h-1.5 rounded-full bg-green-500 shrink-0"></span>
                     {pro}
                   </li>
-                ))}
+                )) : <p className="text-sm text-gray-500 italic">No specific pros listed.</p>}
               </ul>
             </div>
             <div className="bg-red-900/10 border border-red-500/20 p-6 rounded-xl">
@@ -102,12 +106,12 @@ export default function ProviderDetail({ provider }) {
                 <XCircle size={24} weight="fill" /> The Trade-offs
               </h3>
               <ul className="space-y-3">
-                {provider.cons?.map((con, i) => (
+                {provider.cons && provider.cons.length > 0 ? provider.cons.map((con, i) => (
                   <li key={i} className="flex gap-3 text-sm text-gray-300">
                     <span className="mt-1 w-1.5 h-1.5 rounded-full bg-red-500 shrink-0"></span>
                     {con}
                   </li>
-                ))}
+                )) : <p className="text-sm text-gray-500 italic">No specific cons listed.</p>}
               </ul>
             </div>
           </div>
@@ -116,9 +120,9 @@ export default function ProviderDetail({ provider }) {
           <div>
             <h2 className="text-2xl font-serif font-bold text-white mb-6">Loan Details & Terms</h2>
             <div className="bg-midnight-800 border border-white/5 rounded-xl overflow-hidden divide-y divide-white/5">
-              <FeatureRow label="Maximum Amount" value={`$${provider.max_amount.toLocaleString()}`} icon={CurrencyDollar} />
-              <FeatureRow label="Term Length" value={provider.term_length} icon={CalendarBlank} />
-              <FeatureRow label="Funding Speed" value={provider.speed_display} icon={Clock} />
+              <FeatureRow label="Maximum Amount" value={formatMoney(provider.max_amount)} icon={CurrencyDollar} />
+              <FeatureRow label="Term Length" value={provider.term_length || 'Varies'} icon={CalendarBlank} />
+              <FeatureRow label="Funding Speed" value={provider.speed_display || 'Varies'} icon={Clock} />
               <FeatureRow label="Auto-Pay Required?" value={provider.features?.autopay ? 'Yes' : 'No'} />
               <FeatureRow label="Early Payoff Discount?" value={provider.features?.early_payoff_discount ? 'Yes' : 'No'} />
             </div>
@@ -133,22 +137,22 @@ export default function ProviderDetail({ provider }) {
             <div className="space-y-4">
               <div className="flex justify-between items-center text-sm border-b border-white/5 pb-3">
                 <span className="text-gray-400">Min Credit Score</span>
-                <span className="text-white font-bold">{provider.min_credit}</span>
+                <span className="text-white font-bold">{formatNumber(provider.min_credit)}</span>
               </div>
               <div className="flex justify-between items-center text-sm border-b border-white/5 pb-3">
                 <span className="text-gray-400">Min Monthly Revenue</span>
-                <span className="text-white font-bold">${provider.min_revenue.toLocaleString()}</span>
+                <span className="text-white font-bold">{formatMoney(provider.min_revenue)}</span>
               </div>
               <div className="flex justify-between items-center text-sm border-b border-white/5 pb-3">
                 <span className="text-gray-400">Time in Business</span>
-                <span className="text-white font-bold">6 Months</span>
+                <span className="text-white font-bold">Varies</span>
               </div>
             </div>
 
             <div className="mt-8">
                <h3 className="text-white font-bold mb-2">Best For</h3>
                <p className="text-sm text-gray-400 leading-relaxed bg-midnight-900 p-3 rounded-lg border border-white/5">
-                 {provider.best_for}
+                 {provider.best_for || 'General Business Funding'}
                </p>
             </div>
           </div>
