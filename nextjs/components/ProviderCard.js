@@ -2,7 +2,11 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { 
   Lightning, Bank, ChartLineUp, CreditCard, Truck, FileText, 
-  Clock, CurrencyDollar, IdentificationCard, ArrowUpRight, Info 
+  Clock, CurrencyDollar, IdentificationCard, ArrowUpRight, Info,
+  Cardholder, Code, AirplaneTilt, RocketLaunch, Money, UsersThree, 
+  UserCircle, MagnifyingGlass, HouseLine, ArrowsLeftRight, Cpu, 
+  GraduationCap, Buildings, Factory, ChartBar, House, LightningSlash, 
+  Infinity, ShoppingBag, TrendUp, Storefront, Robot, Handshake, Globe
 } from '@phosphor-icons/react';
 
 // Helper to map string IDs to Phosphor Icons
@@ -13,11 +17,39 @@ const IconMap = {
   'ph-credit-card': CreditCard,
   'ph-truck': Truck,
   'ph-file-text': FileText,
+  'ph-cardholder': Cardholder,
+  'ph-code': Code,
+  'ph-airplane-tilt': AirplaneTilt,
+  'ph-rocket-launch': RocketLaunch,
+  'ph-money': Money,
+  'ph-users-three': UsersThree,
+  'ph-user-circle': UserCircle,
+  'ph-magnifying-glass': MagnifyingGlass,
+  'ph-house-line': HouseLine,
+  'ph-arrows-left-right': ArrowsLeftRight,
+  'ph-cpu': Cpu,
+  'ph-graduation-cap': GraduationCap,
+  'ph-buildings': Buildings,
+  'ph-factory': Factory,
+  'ph-chart-bar': ChartBar,
+  'ph-house': House,
+  'ph-lightning-slash': LightningSlash,
+  'ph-infinity': Infinity,
+  'ph-shopping-bag': ShoppingBag,
+  'ph-trend-up': TrendUp,
+  'ph-storefront': Storefront,
+  'ph-robot': Robot,
+  'ph-handshake': Handshake,
+  'ph-globe': Globe
 };
 
 const ProviderCard = ({ provider }) => {
   // Fallback to Lightning if icon not found
   const IconComponent = IconMap[provider.logo_icon] || Lightning;
+
+  // Safe formatting helpers
+  const formatMoney = (val) => val ? `$${val.toLocaleString()}` : 'N/A';
+  const formatNumber = (val) => val ? val : 'N/A';
 
   return (
     <div className="bg-midnight-800 border border-white/5 rounded-xl p-6 flex flex-col transition-all duration-300 hover:-translate-y-1 hover:border-whiskey/40 hover:shadow-2xl group relative overflow-hidden">
@@ -37,7 +69,7 @@ const ProviderCard = ({ provider }) => {
             <IconComponent size={32} weight="fill" />
           )}
         </div>
-        <span className="bg-whiskey/10 text-whiskey border border-whiskey/20 text-xs font-bold px-3 py-1 rounded uppercase tracking-wider">
+        <span className="bg-whiskey/10 text-whiskey border border-whiskey/20 text-xs font-bold px-3 py-1 rounded uppercase tracking-wider text-right max-w-[50%] truncate">
           {provider.type}
         </span>
       </div>
@@ -47,10 +79,10 @@ const ProviderCard = ({ provider }) => {
         <h3 className="text-xl font-bold text-white mb-1 group-hover:text-whiskey transition-colors">
           {provider.name}
         </h3>
-        <p className="text-xs text-gray-500 uppercase font-bold tracking-wider mb-3">
-          {provider.best_for}
+        <p className="text-xs text-gray-500 uppercase font-bold tracking-wider mb-3 line-clamp-1">
+          {provider.best_for || 'General Funding'}
         </p>
-        <p className="text-sm text-gray-400 mb-6 line-clamp-2">
+        <p className="text-sm text-gray-400 mb-6 line-clamp-2 min-h-[40px]">
           {provider.description}
         </p>
 
@@ -60,19 +92,19 @@ const ProviderCard = ({ provider }) => {
             <span className="text-gray-500 flex items-center gap-2">
               <Clock size={16} /> Speed
             </span>
-            <span className="text-white font-medium">{provider.speed_display}</span>
+            <span className="text-white font-medium">{provider.speed_display || 'Varies'}</span>
           </div>
           <div className="flex justify-between text-sm border-b border-white/5 pb-2">
             <span className="text-gray-500 flex items-center gap-2">
               <CurrencyDollar size={16} /> Min Rev
             </span>
-            <span className="text-white font-medium">${provider.min_revenue.toLocaleString()}</span>
+            <span className="text-white font-medium">{formatMoney(provider.min_revenue)}</span>
           </div>
           <div className="flex justify-between text-sm">
             <span className="text-gray-500 flex items-center gap-2">
               <IdentificationCard size={16} /> Credit
             </span>
-            <span className="text-white font-medium">{provider.min_credit}+</span>
+            <span className="text-white font-medium">{formatNumber(provider.min_credit)}+</span>
           </div>
         </div>
       </div>
@@ -80,7 +112,7 @@ const ProviderCard = ({ provider }) => {
       {/* Actions */}
       <div className="flex gap-3 mt-auto relative z-10">
         <a 
-          href={provider.apply_link} 
+          href={provider.apply_link || '#'} 
           target="_blank" 
           rel="noopener noreferrer"
           className="flex-1 bg-whiskey text-midnight-900 font-bold py-3 rounded-lg text-sm flex items-center justify-center gap-2 hover:bg-white transition-colors"
